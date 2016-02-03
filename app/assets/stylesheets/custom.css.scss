@@ -1,0 +1,133 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+
+body{
+  background:#FAFAFA;
+}
+
+/*////////////////header line/////////////////////*/
+
+.site-top-border{
+  background:  #ff6600;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 4px;
+  top: 0;
+}
+.col-xs-8{
+  margin-top:15%;
+}
+
+/*///////////////////Side menu/////////////////*/
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right:0;
+  background-color:rgb(48,133,171);
+  overflow-x: hidden;
+  transition:0.3s;
+  padding-top: 60px;
+
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 30px !important;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*////////////////////Menu icon/////////////////////*/
+
+.menu_icon{
+  border-radius: 3px;
+  border: 0px none;
+  display:inline-block;
+  margin-top: 30px;
+  cursor:pointer;
+  text-decoration: none !important;
+  text-align: center;
+  width: 33px;
+  line-height: 34px;
+  font-size: 1.5em;
+  color:grey;
+  background: transparent none repeat scroll 0% 0%;
+}
+.menu_icon:hover{
+  background:dimgrey;
+  color:#FAFAFA;
+}
+/*////////////////////////Search Bar///////////////////*/
+#search_bar {
+  margin-top:7%;
+  margin-left:-15%;
+  width:79%;
+  height:78px;
+  font-size: 55px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #555;
+  position: absolute;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid #BBB;
+  padding: 0px;
+  padding-right: 60px;
+}
+
+
+#search_button{
+  height: 67px;
+  width: 63px;
+  margin-top:8%;
+  margin-left:63%;
+  background:url(index.png) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  position:relative;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease relative;
+}
+#search_button:hover {
+  opacity: 0.8;
+}
+/*Static_pages*/
+#developers_side_nav{
+  background: dodgerblue;
+  position: fixed;
+  left: 0;
+  height:100%;
+  width:30%;
+  top: 0;
+  bottom:0;
+}

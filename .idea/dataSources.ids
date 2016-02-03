@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails hostel_mess_pay: development" uuid="95f8164d-18e1-4722-8592-a2e366436bb5">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails hostel_mess_pay: test" uuid="7a5c066e-241d-4d06-96c3-a7803fcd7755">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
