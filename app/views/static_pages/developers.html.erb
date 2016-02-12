@@ -1,6 +1,51 @@
 <% provide(:title,"Developers")%>
 <div class="container-fluid">
     <aside id="developers_side_nav">
+      <%= image_tag("899762fd9fd17504.gif", alt: "Messpay") %>
+      <div class="developers_pg" id="nischay_dev" onclick="openDev()">
+           <%= image_tag("nis.jpg", alt: "The Adventurer" ,class:"img-circle" ,width:"90px" ,height:"85px") %>
+           Adventurer
+        <hr width="50%">
+      </div>
+      <div class="developers_pg" id="nikhil_dev"  onclick="openDev()">
+           <%= image_tag("nik.jpg", alt: "Coder" ,class:"img-circle" ,width:"100px" ,height:"100px") %>
+        Coder
+        <hr width="50%">
+      </div>
+      <div class="developers_pg" id="sandy_dev" onclick="openDev()">
+        <%= image_tag("sandy.jpg", alt: "Scientist" ,class:"img-circle" ,width:"100px" ,height:"100px") %>
+        Scientist
+      </div>
+    </aside>
 
-      </aside>
-    </div>
+  <canvas id="myCanvas" style="margin-left:30%"></canvas>
+  <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/bubbles.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script>var myName = "<---Developers";
+
+  var red = [0, 100, 63];
+  var orange = [40, 100, 60];
+  var green = [75, 100, 40];
+  var blue = [196, 77, 55];
+  var purple = [280, 50, 60];
+  var letterColors = [red, orange, green, blue, purple];
+
+  drawName(myName, letterColors);
+
+  if(10 < 3)
+  {
+    bubbleShape = 'square';
+  }
+  else
+  {
+    bubbleShape = 'circle';
+  }
+
+  bounceBubbles();
+
+      //script for  developers loading
+
+
+  </script>
+
+</div>

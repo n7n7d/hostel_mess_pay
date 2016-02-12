@@ -121,13 +121,30 @@ body{
 #search_button:hover {
   opacity: 0.8;
 }
+
 /*Static_pages*/
 #developers_side_nav{
-  background: dodgerblue;
+  background: #e6e6e6;
   position: fixed;
   left: 0;
   height:100%;
   width:30%;
   top: 0;
   bottom:0;
+}
+
+.developers_pg{
+  font-size:40px;
+  font-family:"Andale Mono";
+  font-weight: 100;
+  color:#ff3300;
+  padding:3px;
+  height:15%;
+  font-style: bold;
+}
+#nischay_dev {
+  margin-top: 20%;
+}
+.developers_pg:hover{
+  background-color:#f2f2f2;
 }
