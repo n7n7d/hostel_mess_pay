@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13780e3b-eb18-4a97-8137-9da15ce101e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/hostel_mess_pay.iml" afterPath="$PROJECT_DIR$/.idea/hostel_mess_pay.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/admin/admin_user.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/admin/dashboard.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/admin/resident.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/active_admin.js.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/active_admin.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/admin_user.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/active_admin.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/locales/devise.en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160214131303_devise_create_admin_users.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160214131314_create_active_admin_comments.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/admin_users.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/admin_user_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/developers.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/developers.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="hostel_mess_pay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -631,7 +634,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455427630034</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added active admin">
+      <created>1455472444756</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1455472444756</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -697,7 +706,8 @@
     <MESSAGE value="model added" />
     <MESSAGE value="changes" />
     <MESSAGE value="all changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="all changes" />
+    <MESSAGE value="added active admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="added active admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
