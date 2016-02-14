@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'cancan'
+gem 'draper'
+gem 'pundit'
+gem 'activeadmin-axlsx'
+gem 'active_admin_import' , github: 'activeadmin-plugins/active_admin_import'
+gem 'rubyzip', '~> 1.1', '>= 1.1.7'
 gem 'rails',        '4.2.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'sass-rails',   '5.0.2'
