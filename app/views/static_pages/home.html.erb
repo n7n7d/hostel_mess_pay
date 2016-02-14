@@ -5,8 +5,8 @@
 
        <%= image_tag("899762fd9fd17504.gif", alt: "Messpay") %>
 
-       <%= form_for("", method:"post") do |f| %>
-          <%= f.text_field "hello",placeholder: "Enter Your Roll number!",id:"search_bar"%>
+       <%= form_for(action:"/residents/show") do |f| %>
+          <%= f.text_field :roll_number,placeholder: "Enter Your Roll number!",id:"search_bar"%>
           <%= f.submit "Pay now",id:"search_button" %>
     <%end%>
 
