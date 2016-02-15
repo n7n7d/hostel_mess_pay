@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'static_pages#home'
@@ -9,6 +7,12 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'developers' => 'static_pages#developers'
+
+  #for resident model
   resources :residents
   get 'residents/new'
+  #for User model
+  resources :users
+  get 'signup'  => 'users#new'
+
 end
