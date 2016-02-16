@@ -5,3 +5,7 @@ nischay:
   email: nischay007@gmail.com
   password_digest: <%= User.digest('password') %>
 
+archer:
+  roll_number: 101303147
+  email: duchess@example.gov
+  password_digest: <%= User.digest('password') %>
