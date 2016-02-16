@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1503856644">
+  <component name="DataSourceManagerImpl" format="xml" hash="585952567">
     <data-source source="LOCAL" name="Rails hostel_mess_pay: development" uuid="95f8164d-18e1-4722-8592-a2e366436bb5">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

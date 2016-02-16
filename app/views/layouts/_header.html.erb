@@ -12,6 +12,28 @@
       </div>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <% if logged_in? %>
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", '#' %></li>
+            <%= link_to "Log out", logout_path, method: "delete" %>
+        <% else %>
+               <%= form_for(:session, url: login_path) do |f| %>
+
+                     <%= f.label :email %>
+                     <%= f.email_field :email, class: 'form-control' %>
+
+                     <%= f.label :password %>
+                     <%= f.password_field :password, class: 'form-control' %>
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                    <%= f.check_box :remember_me %>
+                    <span>Remember me </span>
+                <% end %>
+
+
+                <%= f.submit "Log in", class: "btn btn-primary" %>
+               <% end %>
+               <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+        <% end %>
        <ul>
          <li> <%=link_to "Contact",contact_path%></li>
          <li> <%=link_to "Developers",developers_path%></li>
