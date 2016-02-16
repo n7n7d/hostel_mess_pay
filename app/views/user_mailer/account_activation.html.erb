@@ -1,0 +1,11 @@
+<h1>Messpay</h1>
+
+<p>Hi <%= @user.roll_number %>,</p>
+
+<p>
+  Welcome to Messpay, now pay your mess bills easily.
+
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>

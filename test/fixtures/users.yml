@@ -4,8 +4,14 @@ nischay:
   roll_number: 101303110
   email: nischay007@gmail.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 
 archer:
   roll_number: 101303147
   email: duchess@example.gov
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
