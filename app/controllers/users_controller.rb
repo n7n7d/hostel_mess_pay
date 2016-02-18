@@ -1,12 +1,23 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update,:show]
   before_action :correct_user,   only: [:edit, :update]
   def new
+    if logged_in?
+      flash[:info] = "Please logout for Registering other user !"
+      redirect_to @current_user
+    else
     @user = User.new
+    end
   end
 
   def show
     @user = User.find(params[:id])
+    if @user == current_user
+      @user = User.find(params[:id])
+    else
+      flash[:info] = "You dont have access"
+      redirect_to @current_user
+    end
   end
 
   def create
@@ -17,8 +28,6 @@ class UsersController < ApplicationController
       UserMailer.account_activation(@user).deliver_now
       flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
-
-
     else
       render 'new'
     end
@@ -32,13 +41,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       # Handle a successful update.
-      flash[:success] = "Profile updated"
+      flash[:success] = "Password changed !"
       redirect_to @user
 
     else
       render 'edit'
     end
-end
+  end
+
   private
   def user_params
     params.require(:user).permit(:roll_number, :email, :password,

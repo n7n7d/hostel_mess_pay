@@ -166,4 +166,24 @@ body{
 .checkbox{
   margin-left: 30px;
 }
+/* forms */
 
+.form-control {
+  border-radius: 0px;
+  border: 1px solid gray;
+  width: 60%;
+  margin-bottom: 15px;
+  background: inherit;
+}
+input {
+  height: auto !important;
+}
+.btn-primary{
+  border:none;
+  border-radius:0px;
+  background:#005ce6;
+}
+.btn-primary:hover{
+  background: #4d94ff;
+  border: none;
+}

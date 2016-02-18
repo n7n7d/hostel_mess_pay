@@ -16,12 +16,11 @@ Rails.application.routes.draw do
 
   #for resident model
   resources :residents
-  get 'residents/new'
   #for User model
   resources :users
   get 'signup'  => 'users#new'
   #for sessions
-  get    'login'   => 'sessions#new'
+  get    'login'   => 'static_pages#home'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 

@@ -1,25 +1,30 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
+<% provide(:title, 'Sign up for a free messpay account') %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-xs-5 col-xs-offset-2">
+    <%= image_tag("tu.jpg", alt: "Thapar",width:"475",height: "331",class:"img-responsive") %>
+    <h1 style="font-weight: 400;color:gray;text-align: left">Signup for an account</h1>
+    <p style="font-weight: 500">Then manage your features when logged in,registered user can mark mess
+      <br>leaves,view there bill pay history & recipts and pay bills easily online.</p>
+  </div >
+  <div class="col-xs-5" id="signup_form">
+    <%= image_tag("899762fd9fd17504.gif", alt: "Messpay",height: "38",width: "120") %>
+
+    <p style='font-size:30px;font-weight:200;'>Create an account</p>
+
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages' %>
+        <p style="font-size: 0.87em">Messpay account <%= link_to "What's this?","#" %></p>
+        <%= f.text_field :roll_number, class:'form-control',placeholder:"Roll number" %>
 
-        <%= f.label :roll_number %>
-        <%= f.text_field :roll_number, class: 'form-control' %>
+        <%= f.email_field :email, class:'form-control',placeholder:"Email" %>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.password_field :password, class:'form-control',placeholder:"Password"%>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, class: 'form-control',placeholder:"Password confirmation"%>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <%= f.submit "Create account", class: "btn btn-primary" %>
     <% end %>
+    <p style="margin-top: 10%;">Already have Messpay account !<span onclick="openNav()"style="color:blue;cursor:pointer;"> Login here</span></p>
   </div>
 </div>
 
