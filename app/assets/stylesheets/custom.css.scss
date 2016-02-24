@@ -26,12 +26,19 @@ body{
 
 .sidenav {
   height: 100%;
-  width: 200px;
+  width:200px;
   position: fixed;
   z-index: 1;
   top: 0;
   right:0;
-  background-color:rgb(48,133,171);
+  background: rgba(191,191,191,1);
+  background: -moz-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(7%, rgba(191,191,191,1)), color-stop(40%, rgba(139,139,139,1)), color-stop(84%, rgba(69,69,69,1)), color-stop(100%, rgba(44,44,44,1)));
+  background: -webkit-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
+  background: -o-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
+  background: -ms-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
+  background: linear-gradient(to bottom, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfbfbf', endColorstr='#2c2c2c', GradientType=0 );
   overflow-x: hidden;
   transition:0.3s;
   padding-top: 60px;
@@ -39,16 +46,24 @@ body{
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 15px;
+  font-weight: 300;
+  color: #333333;
   display: block;
-  transition: 0.3s
+  transition: 0.3s;
+  outline: 0;
+}
+
+.sidenav ul{
+  list-style: none;
+  margin-left: 0px;
+  margin-top:30%;
 }
 
 .sidenav a:hover, .offcanvas a:focus{
-  color: #f1f1f1;
+  text-decoration: underline;
+
 }
 
 .closebtn {
@@ -63,6 +78,20 @@ body{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+#sidenav_logo{
+  margin-left: 10%;
+}
+#console{
+  padding-bottom: 2px;
+  border:1px solid #00ace6;
+  border-radius: 30px;
+  width: 70%;
+  margin-left: 10%;
+  margin-top: 20%;
+  padding-left: 10%;
+}
+
 /*////////////////////Menu icon/////////////////////*/
 
 .menu_icon{
@@ -80,7 +109,7 @@ body{
   background: transparent none repeat scroll 0% 0%;
 }
 .menu_icon:hover{
-  background:dimgrey;
+  background: #a6a6a6;
   color:#FAFAFA;
 }
 /*////////////////////////Search Bar///////////////////*/
@@ -95,7 +124,7 @@ body{
   font-weight: 100;
   border: none;
   outline: none;
-  color: #555;
+  color: green;
   position: absolute;
   background: none;
   cursor: pointer;
@@ -148,6 +177,9 @@ body{
 .developers_pg:hover{
   background-color:#f2f2f2;
 }
+
+/*Error explanations*/
+
 #error_explanation {
   color: red;
   ul {
@@ -187,3 +219,24 @@ input {
   background: #4d94ff;
   border: none;
 }
+#login_form .form-control{
+  width:80%;
+  color: #595959;
+  background: #888888 ;
+}
+#login_form {
+  margin-left: 10%;
+}
+#login_form a{
+  color: #383838 ;
+  text-decoration: none;
+  font-size: small;
+}
+.checkbox{
+  margin-left: 10%;
+}
+
+#login_form a:hover{
+  color:#0052cc;
+}
+

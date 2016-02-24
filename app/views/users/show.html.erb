@@ -1,7 +1,7 @@
 <% provide(:title, @user.roll_number) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
+  <div class="col-md-3" style="background-color: lavender;">
+    <section>
       <h1>
         <%if @user==current_user%>
         <%= gravatar_for @user %>
@@ -9,6 +9,6 @@
         <%= @user.roll_number %>
       </h1>
     </section>
-  </aside>
-</div>
+  </div>
+  </div>
 

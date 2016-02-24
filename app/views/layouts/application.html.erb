@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   <%= stylesheet_link_tag 'application', media: 'all',
                           'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -18,7 +19,8 @@
 <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
-
+<div class="container-fluid">
 <%= yield %>
+</div>
 </body>
 </html>
