@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+hostel1:
+  hostel: j
+
+hostel2:
+  hostel: b
