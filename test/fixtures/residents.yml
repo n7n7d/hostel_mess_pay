@@ -1,2 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+res1:
+   room_number: ef-201
+   roll_number: 101303110
+   name:        nischay namdev
+
+
+res2:
+    room_number: ef-204
+    roll_number: 10130314
+    name:        sandeep

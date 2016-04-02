@@ -1,14 +1,12 @@
-<% provide(:title, @user.roll_number) %>
-<div class="row">
-  <div class="col-md-3" style="background-color: lavender;">
-    <section>
-      <h1>
-        <%if @user==current_user%>
-        <%= gravatar_for @user %>
-            <%end%>
-        <%= @user.roll_number %>
-      </h1>
-    </section>
-  </div>
-  </div>
+<% provide(:title, @user.resident.name) %>
+<div class="col-xs-3"style="background: deepskyblue;height: 100%;">
+  <%if @user==current_user%>
+      <%= gravatar_for @user %>
+      <%= @user.resident.name %>
+      <%= @user.resident.roll_number%>
+      <%= @user.resident.room_number%>
+      <%else%>
+  <p>Bitch better have my money!</p>
+  <%end%>
+  <p>Your hostel is <%=@user.resident.hostel%></p>
 

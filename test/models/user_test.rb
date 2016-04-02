@@ -3,12 +3,16 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(roll_number: "Example User", email: "user@example.com",password: "foobar", password_confirmation: "foobar")
+    @resident = residents(:res1)
+    @user = @resident.build_user(roll_number: "101303110", email: "user@example.com",password: "foobar", password_confirmation: "foobar")
   end
 
   test "should be valid" do
     assert @user.valid?
+    puts @user.valid?
+
   end
+
   test "roll_number should be present" do
     @user.roll_number = "     "
     assert_not @user.valid?

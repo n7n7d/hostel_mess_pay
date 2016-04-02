@@ -3,7 +3,8 @@ require 'test_helper'
 class ResidentTest < ActiveSupport::TestCase
 
   def setup
-    @resident=Resident.new(room_number:"EF201",roll_number:"101303110",name:"Example Resident",hostel:"J")
+    @hostel=hostels(:hostel1)
+    @resident=@hostel.residents.build(room_number:"EF201",roll_number:"101303110",name:"Example Resident")
   end
   test "should be valid" do
     assert @resident.valid?
@@ -21,10 +22,6 @@ class ResidentTest < ActiveSupport::TestCase
     @resident.name = "     "
     assert_not @resident.valid?
   end
-  test "hostel should be present" do
-    @resident.hostel = "     "
-    assert_not @resident.valid?
-  end
 
   test "name should not be too long" do
     @resident.name = "a" * 51
@@ -37,9 +34,5 @@ class ResidentTest < ActiveSupport::TestCase
     @resident.save
     assert_not duplicate_user.valid?
   end
-  test "hostel must be valid" do
-    if %w(a b c h pg j frc e g i).include?(@resident.hostel)
-      assert @resident.valid?
-    end
-  end
+
 end

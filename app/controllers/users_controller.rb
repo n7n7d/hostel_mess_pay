@@ -21,15 +21,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      # Handle a successful save.
-      @user.send_activation_email
-      UserMailer.account_activation(@user).deliver_now
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+    resident = Resident.find_by(roll_number: user_params[:roll_number])
+    if resident.present?
+      @user = resident.create_user(user_params)
+      if @user.save
+        @user.send_activation_email
+        UserMailer.account_activation(@user).deliver_now
+        flash[:info] = "Please check your email to activate your account."
+        redirect_to root_url
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      flash[:danger] = "You have entered a worng Roll number or you are not a Resident"
+      redirect_to signup_path
     end
   end
 
