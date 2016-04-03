@@ -1,4 +1,4 @@
 ActiveAdmin.register Hostel do
-  permit_params :list, :of, :attributes, :on, :model, :hostel
+  permit_params  :hostel
   filter :hostel
 end

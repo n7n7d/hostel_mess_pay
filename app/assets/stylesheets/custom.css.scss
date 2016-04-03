@@ -5,7 +5,7 @@
 
 
 body{
-  background:#FAFAFA;
+  background:#ffffff;
 }
 
 /*////////////////header line/////////////////////*/
@@ -31,14 +31,14 @@ body{
   z-index: 1;
   top: 0;
   right:0;
-  background: rgba(191,191,191,1);
-  background: -moz-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(7%, rgba(191,191,191,1)), color-stop(40%, rgba(139,139,139,1)), color-stop(84%, rgba(69,69,69,1)), color-stop(100%, rgba(44,44,44,1)));
-  background: -webkit-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
-  background: -o-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
-  background: -ms-linear-gradient(top, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
-  background: linear-gradient(to bottom, rgba(191,191,191,1) 7%, rgba(139,139,139,1) 40%, rgba(69,69,69,1) 84%, rgba(44,44,44,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfbfbf', endColorstr='#2c2c2c', GradientType=0 );
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e4f7+19,539fe1+97 */
+  background: rgb(208,228,247); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(208,228,247,1) 19%, rgba(83,159,225,1) 97%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(208,228,247,1) 19%,rgba(83,159,225,1) 97%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(208,228,247,1) 19%,rgba(83,159,225,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#539fe1',GradientType=0 ); /* IE6-9 */
+
+
   overflow-x: hidden;
   transition:0.3s;
   padding-top: 60px;
@@ -239,4 +239,39 @@ input {
 #login_form a:hover{
   color:#0052cc;
 }
+/* This is for User Side List of menus*/
+#user_menu{
+  margin-top:3%;
+  padding: 5px 7px 5px 2px;
+}
+#user_menu a{
+    color:#989898 ;
+    cursor: pointer;
+    outline: none;
+    font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+}
+#user_menu a:hover{
+  text-decoration: none;
+  color:#989898;
+}
 
+
+#user_menu li{
+  list-style: none;
+}
+#bottom_quate {
+  position: fixed;
+  bottom:0px;
+  font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color:#ff4d88 ;
+
+}
+.hostel_image{
+  position: fixed;
+  bottom:30%;
+}

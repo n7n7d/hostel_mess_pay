@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402041435) do
+ActiveRecord::Schema.define(version: 20160402153428) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -51,6 +51,30 @@ ActiveRecord::Schema.define(version: 20160402041435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "leaves", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "destination"
+    t.integer  "resident_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "leaves", ["resident_id"], name: "index_leaves_on_resident_id"
+
+  create_table "rate_cards", force: :cascade do |t|
+    t.integer  "daily_diet"
+    t.integer  "establishment_charge"
+    t.integer  "maintenance_charge"
+    t.integer  "staff_welfare_charge"
+    t.integer  "extra_charge"
+    t.integer  "hostel_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "rate_cards", ["hostel_id"], name: "index_rate_cards_on_hostel_id"
 
   create_table "residents", force: :cascade do |t|
     t.string   "room_number"

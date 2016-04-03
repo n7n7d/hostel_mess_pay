@@ -1,0 +1,61 @@
+<div class="col-xs-2 " >
+  <%= image_tag("899762fd9fd17504.gif", alt: "Messpay",height: "38",width: "120") %>
+
+  <div id="user_menu">
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("account1.png", alt: "Account",height: "25",width: "25") %> Account
+      <% end %>
+    </p>
+    <p class="user_menu1">
+      <%= link_to(current_user) do %>
+          <%= image_tag("paynow2.png", alt: "Pay now",height: "25",width: "25") %> Pay Bill
+      <% end %>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("leave.png", alt: "Leaves",height: "25",width: "25") %> Leaves
+      <%end%>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("history.png", alt: "History",height: "25",width: "25") %> History
+      <%end%>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("fine.png", alt: "Fine",height: "25",width: "25") %> Fine
+      <%end%>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("Food.png", alt: "Food",height: "25",width: "25") %> Mess Menu
+      <%end%>
+    </p>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("manager.png", alt: "Food",height: "25",width: "25") %> Contact Mess
+      <%end%>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("weed3.png", alt: ":)",height: "25",width: "25") %> Contact Messpay
+      <%end%>
+    </p>
+    <p class="user_menu1">
+      <%= link_to("#") do %>
+          <%= image_tag("suggestions.png", alt: ":)",height: "25",width: "25") %> Suggestions
+      <%end%>
+    </p>
+  </div>
+
+  <% if @user.resident.hostel.hostel == 'J' %>
+     <span class="hostel_image"> <%= image_tag("hostelj.png", alt: "Hostel J",height: "50",width: "50") %><span>
+
+  <%else%>
+      <p>backoff</p>
+  <%end%>
+
+</div>
+<p id="bottom_quate"style="">Many in world  sleep Without Food Please Don't waste it.<%=link_to "(Donate)",'http://www.wfp.org/' %></p>

@@ -6,19 +6,19 @@ ActiveAdmin.register Resident do
     column :name
     column :hostel
     actions
-  end
-  filter :name,:as => :string
-  filter :hostel, :as => :select
-  filter :room_number
-  filter :roll_number
+   end
+   filter :name,:as => :string
+   filter :room_number
+   filter :roll_number
+   filter :hostel, as: :select
 
    form do |f|
      f.semantic_errors *f.object.errors.keys
      inputs 'Enter the student details' do
+       input :hostel
        input :room_number
        input :roll_number
        input :name
-       input :hostel
        actions
      end
    end

@@ -1,0 +1,3 @@
+class LeavesController < ApplicationController
+
+end
