@@ -1,6 +1,6 @@
 <% provide(:title, "Update Profile") %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-4">
+  <div class="col-xs-4 col-xs-offset-3" style="background: greenyellow;position: fixed;left:10%;">
     <%= image_tag("899762fd9fd17504.gif", alt: "Messpay",height: "76",width: "240") %>
 
 
@@ -18,10 +18,14 @@
         <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 <br>
-    <hr>
+
     <div class="gravatar_edit">
-      <%= gravatar_for @user,size:200%><br>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
+      <%= gravatar_for @user,size:200%>
+      <br>
+      <br>
+      <a href="http://gravatar.com/emails" target="_blank" class="btn btn-primary">Change Pic</a>
+      <br>
+      <br>
     </div>
   </div>
 </div>
