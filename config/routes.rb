@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   #for leave model
    resources :leaves, only: [:new,:create,:delete,:show]
    get 'leaves' =>'leaves#show'
+
+  #for account model
+  resources :accounts, only:[:create,:show]
 end

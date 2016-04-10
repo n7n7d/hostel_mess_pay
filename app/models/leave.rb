@@ -1,21 +1,22 @@
+
 class Leave < ActiveRecord::Base
   belongs_to :resident
   validates :destination,presence:true
   validates :end_date,presence: true
   validates :start_date,presence: true
-  before_create :check_correct_leave
+  validate :check_correct_leave, :check_leaves_in_same_month
 
   private
 
   def check_correct_leave
-
-   if resident.hostel.hostel=='J'
-     (self.end_date - self.start_date).to_i == 4 ||  (self.end_date - self.start_date).to_i == 5
-
-   else
-     errors.add(:start_date, "Leave not granted only 4 or 5 days")
-   end
-
+    if resident.hostel.hostel=='J' and ![5,4].include?((self.end_date - self.start_date).to_i)
+      errors.add(:base,"Leaves are granted only for 4 or 5 days in hostel J")
+    end
   end
 
+  def check_leaves_in_same_month
+    if self.resident.leaves.where('start_date > ?', self.start_date.beginning_of_month).any?
+      errors.add(:base,"You can't mark leave cause you have already marked leave for this month")
+    end
+  end
 end

@@ -1,8 +1,9 @@
 
 <li id="leaves-<%= leave.id %>">
   <span class="destination">You were at <%= leave.destination %> for <%= (leave.end_date - leave.start_date).to_i %> days </span>
+  <span class="leave_range"> From <%= leave.start_date%> to <%= leave.end_date %> </span>
   <span class="timestamp">
-    Leave marked on <%= leave.start_date %>
+    Leave marked on <%= Date.today %>
     <%= link_to "link",new_leave_path %>
   </span>
 </li>
