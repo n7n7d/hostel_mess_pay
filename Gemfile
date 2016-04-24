@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'jquery-ui-rails'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
@@ -30,8 +31,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor', '0.0.2'
   gem 'puma', '~> 2.16'
 end
-gem 'jquery-ui-rails'
