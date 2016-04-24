@@ -1,11 +1,10 @@
 Rails.application.configure do
-  config.assets.initialize_on_precompile = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
   config.force_ssl = true
-
+  config.serve_static_assets = true
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -31,7 +30,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile =
+  config.assets.compile =true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -83,6 +82,7 @@ Rails.application.configure do
   config.assets.precompile +=
       %w( #{Rails.root}/vendor/assets/javascripts/active_admin.js.coffee)
 
+  RAILS_ENV=production bundle exec rake assets:precompile
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
