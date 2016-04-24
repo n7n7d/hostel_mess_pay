@@ -7,9 +7,6 @@ ActiveAdmin.register_page "Dashboard" do
  columns do
    column do
      panel "Generate Bills" do
-
-        render partial: 'form'
-
      end
    end
    column do
