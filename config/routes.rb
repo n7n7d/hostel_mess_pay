@@ -26,5 +26,10 @@ Rails.application.routes.draw do
    get 'leaves' =>'leaves#show'
 
   #for account model
-  resources :accounts, only:[:create,:show]
+  resources :accounts, only:[:create,:show,:update]
+
+  #for bills model
+  resources :bills, only:[:create,:show]
+  get 'bills' =>'bills#show'
+
 end

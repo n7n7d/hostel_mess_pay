@@ -1,3 +1,2 @@
 class ResidentsController < ApplicationController
-
 end

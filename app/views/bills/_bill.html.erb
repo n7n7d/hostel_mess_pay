@@ -1,0 +1,8 @@
+<li id="leaves-<%= bill.id %>">
+  <span class="destination">You were at <%= bill.to_date %> </span>
+  <span class="leave_range"> <strong>amount <%= bill.amount%></strong> </span>
+  <span class="timestamp">
+    Leave marked on <%= Date.today %>
+    <%= link_to "link",new_leave_path %>
+  </span>
+</li>

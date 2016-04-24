@@ -1,5 +1,6 @@
 ActiveAdmin.register Resident do
-   permit_params :room_number,:roll_number,:name,:hostel,:hostel_id
+
+  permit_params :room_number,:roll_number,:name,:hostel,:hostel_id
    index do
     column :room_number
     column :roll_number
