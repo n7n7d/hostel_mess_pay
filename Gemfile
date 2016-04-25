@@ -33,3 +33,4 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'puma', '~> 2.16'
 end
+ruby '2.2.0'
