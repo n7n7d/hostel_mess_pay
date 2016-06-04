@@ -1,4 +1,2 @@
-# hostel_mess_pay
-This is the hostel mess pay web site
-Author: Nischay namdev
+Rails App by Nischay Namdev, Changing World :D
 
