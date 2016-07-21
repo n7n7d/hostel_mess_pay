@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13780e3b-eb18-4a97-8137-9da15ce101e4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/admin/dashboard/_form.html.arb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/hostel_mess_pay.iml" afterPath="$PROJECT_DIR$/.idea/hostel_mess_pay.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/admin_user.rb" afterPath="$PROJECT_DIR$/app/admin/admin_user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/bill.rb" afterPath="$PROJECT_DIR$/app/admin/bill.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/dashboard.rb" afterPath="$PROJECT_DIR$/app/admin/dashboard.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/bills_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/bills_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/residents_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/residents_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/admin_user.rb" afterPath="$PROJECT_DIR$/app/models/admin_user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/bill.rb" afterPath="$PROJECT_DIR$/app/models/bill.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/resident.rb" afterPath="$PROJECT_DIR$/app/models/resident.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bills/_bill.html.erb" afterPath="$PROJECT_DIR$/app/views/bills/_bill.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bills/show.html.erb" afterPath="$PROJECT_DIR$/app/views/bills/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/active_admin.rb" afterPath="$PROJECT_DIR$/config/initializers/active_admin.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="hostel_mess_pay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -589,7 +568,7 @@
       <workItem from="1468590217652" duration="169000" />
       <workItem from="1469096631694" duration="619000" />
       <workItem from="1469098012111" duration="258000" />
-      <workItem from="1469098405275" duration="157000" />
+      <workItem from="1469098405275" duration="235000" />
     </task>
     <task id="LOCAL-00001" summary="making static pages">
       <created>1455252501522</created>
@@ -899,7 +878,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461555778120</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="new changes">
+      <created>1469098571524</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1469098571524</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -935,7 +921,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8256000" />
+    <option name="totallyTimeSpent" value="8334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1022,7 +1008,8 @@
     <MESSAGE value="leave controller and views created" />
     <MESSAGE value="advance editing leaves" />
     <MESSAGE value="main changes before deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="main changes before deploy" />
+    <MESSAGE value="new changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="new changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
