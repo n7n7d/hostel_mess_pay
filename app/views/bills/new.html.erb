@@ -1,0 +1,24 @@
+
+<% provide(:title, 'Genrate Mess Bills Easily') %>
+
+<div class="row">
+
+  <div class="col-md-6 col-md-offset-3" style="background: beige">
+    <p style='font-size:30px;font-weight:200;'>Genrate Bills </p>
+
+    <%= form_for(@bill) do |f| %>
+        <p class="Leave_lable">Start date</p>
+        <%= f.date_select :from_date,selected:Date.today+1,class: 'form-control' %><br><br>
+        <p class="Leave_lable">End date</p>
+        <%= f.date_select :to_date,selected:Date.today+4,class: 'form-control' %><br><br>
+        <p class="Leave_lable">Expiry date</p>
+
+        <%= f.date_select :expiry_date ,class: 'form-control' %><br><br>
+
+        <%= f.submit "Genrate now", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <p style="color:#989898;font-weight: 200;background: #ffcccc;text-align: center;border-radius: 10px" ></p>
+    <br>
+  </div>
+</div>
