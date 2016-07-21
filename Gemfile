@@ -20,6 +20,7 @@ gem 'sdoc',         '0.4.0', group: :doc
 group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
+  gem 'sqlite3'
   gem 'spring',      '1.1.3'
 end
 
@@ -33,4 +34,3 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'puma', '~> 2.16'
 end
-ruby '2.2.0'

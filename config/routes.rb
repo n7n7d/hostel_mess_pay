@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'developers' => 'static_pages#developers'
-
   #for resident model
   resources :residents
   #for User model
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   #for sessions
   get    'login'   => 'static_pages#home'
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get 'logout'  => 'sessions#destroy'
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
@@ -29,7 +28,6 @@ Rails.application.routes.draw do
   resources :accounts, only:[:create,:show,:update]
 
   #for bills model
-  resources :bills, only:[:create,:show]
+  resources :bills, only:[:new,:create,:show,:update]
   get 'bills' =>'bills#show'
-
 end

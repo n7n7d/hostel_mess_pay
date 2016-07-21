@@ -4,18 +4,29 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
 
- columns do
-   column do
-     panel "Generate Bills" do
-     end
-   end
-   column do
-     panel "Pay Bills" do
+    columns do
+      form partial: 'bills/form'
 
-     end
-   end
+
+      column do
+        link_to image_tag("pay1.jpg",height: "200",width: "200"), new_bill_path
+
+      end
+
+      column do
+        link_to image_tag("pay2.jpg",height: "200",width: "200"), bill_path
+      end
+
+  column do
+    panel "Recent Customers" do
+      table_for Resident.all  do
+        column "Name",  :name
+        column "Roll number",  :roll_number
+
+      end
+    end
+  end
+    end
 
  end
-  end
 end
-
