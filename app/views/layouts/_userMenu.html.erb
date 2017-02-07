@@ -1,4 +1,5 @@
-<div class="row">
+<%if !admin_user_signed_in?%>
+    <div class="row">
 <div class="col-xs-2">
 
   <div id="user_menu">
@@ -8,7 +9,7 @@
 
     <p class="usser_menu1">
 
-      <%= link_to("#") do %>
+      <%= link_to(account_path(current_user.resident.account.id)) do %>
           <%= image_tag("account1.png", alt: "Account",height: "25",width: "25") %> Account
       <% end %>
     </p>
@@ -23,13 +24,13 @@
       <%end%>
     </p>
     <p class="user_menu1">
-      <%= link_to(bills_path) do %>
+      <%= link_to(user_bills_path) do %>
           <%= image_tag("history.png", alt: "History",height: "25",width: "25") %> History
       <%end%>
     </p>
     <p class="user_menu1">
-      <%= link_to("#") do %>
-          <%= image_tag("fine.png", alt: "Fine",height: "25",width: "25") %> Fine
+      <%= link_to(microposts_path) do %>
+          <%= image_tag("foodies.png", alt: "Fine",height: "25",width: "25") %> Foodies Blog
       <%end%>
     </p>
     <p class="user_menu1">
@@ -59,4 +60,4 @@
 
 </div>
   </div>
-<p id="bottom_quate"style="">Many in world  sleep Without Food Please Don't waste it.<%=link_to "(Donate)",'http://www.wfp.org/' %></p>
+    <%end%>

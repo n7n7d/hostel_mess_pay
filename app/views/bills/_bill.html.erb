@@ -1,5 +1,13 @@
+<%=bill.resident.name %>
+<%=bill.amount %>
+<%=bill.expiry_date%>
+<%=bill.is_paid? %>
+<% if !bill.is_paid? %>
+    <%= link_to "PAY NOW",edit_bill_path(bill.id)%>
+    <%= link_to "bobo", bill_pdf_path(bill.id) %>
 
+<%else%>
+    PAID
+<%end%>
+<br>
 
-
-
- <div style="align-content: center"><%= bill.amount%> </div>

@@ -1,0 +1,26 @@
+<% provide(:title,'Bill History') %>
+<div class="row">
+  <div class="col-sm-7 col-sm-offset-3">
+    <div class="panel panel-info">
+      <div class="panel-heading">All bills</div>
+      <div class="panel-body">      </div>
+        <div class="list-group">
+          <% @bills.each do |bill| %>
+              <% if bill.is_paid? %>
+        <%= link_to(bill_pdf_path(bill.id),class: "list-group-item")  do %>
+             <span style="color: #00ace6">  Bill for <%= bill.from_date.strftime("%Y %B") %> Amounting &#8377; <%= bill.amount%> <span style="color: green">[Click to generate receipt]</span></span>
+                  <%= image_tag("ok.png", alt: ":)",height: "20px",width: "20px")  %>
+                  <%end%>
+              <%else%>
+                   <%= link_to(current_user,class: "list-group-item")  do %>
+                          <span style="color: #00ace6">  Bill for <%= bill.from_date.strftime("%Y %B") %> Amounting &#8377; <%= bill.amount%>  <span style="color: red">[Pending] [Pay now]</span></span>
+                          <%= image_tag("nok.png", alt: ":)",height: "20px",width: "20px")  %>
+                       <%end%>
+                <% end %>
+          <%end%>
+
+      </div>
+    </div>
+
+  </div>
+</div>

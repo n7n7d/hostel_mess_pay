@@ -23,4 +23,7 @@ ActiveAdmin.register Resident do
        actions
      end
    end
+
+
+
 end

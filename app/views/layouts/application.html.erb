@@ -14,17 +14,21 @@
   <![endif]-->
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
-<body><% flash.each do |message_type, message| %>
+<body>
+<% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
-<%= render 'layouts/header' %>
 
 <div class="container">
-  <%= yield %>
+  <%= render 'layouts/header' %>
+<br style="margin-top: 7%">
 
   <%if logged_in? %>
-  <%= render 'layouts/userMenu' %>
+     <%= render 'layouts/userMenu' %>
   <%end%>
+
+  <%= yield %>
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>

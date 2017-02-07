@@ -1,7 +1,7 @@
 <% provide(:title, 'Your leaves') %>
 <div class="row">
-  <div class="col-xs-8 col-xs-offset-3"id="leaves_button">
-    <h1 style="color: deepskyblue">Leaves (<%= current_user.resident.leaves.count %>)</h1><span class="btn btn-primary"><%= link_to"Mark Leave now",new_leave_path%></span>
+  <div class="col-xs-8 col-xs-offset-3"id="leaves_button" style="margin-top: 0">
+    <h1 style="color: #3366ff;font-weight: 200">Leaves <span class="badge"><%= current_user.resident.leaves.count %></span></h1><span class="btn btn-primary"><%= link_to"Mark Leave now",new_leave_path%></span>
     <br>
     <br>
     <ol class="leaves">

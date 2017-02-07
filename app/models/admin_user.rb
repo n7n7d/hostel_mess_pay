@@ -3,6 +3,6 @@ class AdminUser < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
-  validates :hostel, inclusion: { in: %w(j a b c h pg),
+  validates :hostel, inclusion: { in: %w(J A B C D PG),
                                 message: "%{value} is not a valid hostel" }
 end

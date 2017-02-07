@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604072222) do
+ActiveRecord::Schema.define(version: 20160914075023) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "fine"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 20160604072222) do
   end
 
   add_index "leaves", ["resident_id"], name: "index_leaves_on_resident_id"
+
+  create_table "microposts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
+  add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
   create_table "rate_cards", force: :cascade do |t|
     t.integer  "daily_diet"

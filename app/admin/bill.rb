@@ -13,7 +13,7 @@ ActiveAdmin.register Bill do
       end
 
       def edit
-        @bill = User.find(params[:id])
+        @bill = Bill.find(params[:id])
       end
       def create
         hostel_id = Hostel.where(hostel: current_admin_user.hostel.capitalize).first.id
@@ -38,6 +38,5 @@ ActiveAdmin.register Bill do
       actions
     end
   end
-  form partial: 'form'
 
 end

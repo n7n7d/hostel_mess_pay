@@ -3,263 +3,801 @@
   <data-source name="Rails hostel_mess_pay: development" uuid="95f8164d-18e1-4722-8592-a2e366436bb5">
     <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
-    <schema name="" catalog=""/>
-    <table name="accounts" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="fine" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="leaves" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="last_month_adjustment" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_accounts_on_resident_id" unique="true" columns="resident_id"/>
-    </table>
-    <table name="active_admin_comments" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="namespace" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="resource_id" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="resource_type" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="author_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="author_type" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_active_admin_comments_on_resource_type_and_resource_id" unique="true" columns="resource_type,resource_id"/>
-      <index name="index_active_admin_comments_on_namespace" unique="true" columns="namespace"/>
-      <index name="index_active_admin_comments_on_author_type_and_author_id" unique="true" columns="author_type,author_id"/>
-    </table>
-    <table name="admin_users" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="encrypted_password" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="reset_password_token" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reset_password_sent_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="remember_created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="sign_in_count" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="current_sign_in_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="last_sign_in_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="current_sign_in_ip" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="last_sign_in_ip" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="hostel" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_admin_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
-      <index name="index_admin_users_on_email" unique="true" columns="email"/>
-    </table>
-    <table name="bills" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="from_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="to_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="expiry_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="amount" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="payment_mode" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="is_paid" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="paid_amount" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <index name="index_bills_on_resident_id" unique="true" columns="resident_id"/>
-    </table>
-    <table name="hostels" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="hostel" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="leaves" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="destination" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_leaves_on_resident_id" unique="true" columns="resident_id"/>
-    </table>
-    <table name="rate_cards" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="daily_diet" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="establishment_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="maintenance_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="staff_welfare_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="extra_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="hostel_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_rate_cards_on_hostel_id" unique="true" columns="hostel_id"/>
-    </table>
-    <table name="residents" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="room_number" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="roll_number" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="hostel_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="schema_migrations" schema="" catalog="" type="TABLE">
-      <column name="version" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <index name="unique_schema_migrations" unique="true" columns="version"/>
-    </table>
-    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
-      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="users" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="roll_number" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="password_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="remember_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="activation_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="activated" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4" def="J2Yn"/>
-      <column name="activated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reset_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reset_sent_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <index name="index_users_on_email" unique="true" columns="email"/>
-    </table>
+    <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+      <schema id="1">
+        <visible>1</visible>
+      </schema>
+      <table id="2" parent="1" name="accounts"/>
+      <table id="3" parent="1" name="active_admin_comments"/>
+      <table id="4" parent="1" name="admin_users"/>
+      <table id="5" parent="1" name="bills"/>
+      <table id="6" parent="1" name="hostels"/>
+      <table id="7" parent="1" name="leaves"/>
+      <table id="8" parent="1" name="rate_cards"/>
+      <table id="9" parent="1" name="residents"/>
+      <table id="10" parent="1" name="schema_migrations"/>
+      <table id="11" parent="1" name="sqlite_sequence"/>
+      <table id="12" parent="1" name="users"/>
+      <column id="13" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="14" parent="2" name="fine">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="15" parent="2" name="leaves">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="16" parent="2" name="last_month_adjustment">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="17" parent="2" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="18" parent="2" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="19" parent="2" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="20" parent="2" name="index_accounts_on_resident_id">
+        <columns>resident_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="21" parent="2">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="22" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="23" parent="3" name="namespace">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="24" parent="3" name="body">
+        <data-type>TEXT(0,-1)|12</data-type>
+      </column>
+      <column id="25" parent="3" name="resource_id">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="26" parent="3" name="resource_type">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="27" parent="3" name="author_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="28" parent="3" name="author_type">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="29" parent="3" name="created_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="30" parent="3" name="updated_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="31" parent="3" name="index_active_admin_comments_on_namespace">
+        <columns>namespace</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="32" parent="3" name="index_active_admin_comments_on_resource_type_and_resource_id">
+        <columns>resource_type
+resource_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="33" parent="3" name="index_active_admin_comments_on_author_type_and_author_id">
+        <columns>author_type
+author_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="34" parent="3">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="35" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="36" parent="4" name="email">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="37" parent="4" name="encrypted_password">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="38" parent="4" name="reset_password_token">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="39" parent="4" name="reset_password_sent_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="40" parent="4" name="remember_created_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="41" parent="4" name="sign_in_count">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="42" parent="4" name="current_sign_in_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="43" parent="4" name="last_sign_in_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="44" parent="4" name="current_sign_in_ip">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="45" parent="4" name="last_sign_in_ip">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="46" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="47" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="48" parent="4" name="hostel">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <index id="49" parent="4" name="index_admin_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="50" parent="4" name="index_admin_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="51" parent="4">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="52" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="53" parent="5" name="from_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="54" parent="5" name="to_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="55" parent="5" name="expiry_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="56" parent="5" name="amount">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="57" parent="5" name="payment_mode">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="58" parent="5" name="is_paid">
+        <data-type>BOOLEAN(0,-1)|4</data-type>
+      </column>
+      <column id="59" parent="5" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="60" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="61" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="62" parent="5" name="paid_amount">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <index id="63" parent="5" name="index_bills_on_resident_id">
+        <columns>resident_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="64" parent="5">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="65" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="66" parent="6" name="hostel">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="67" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="68" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <key id="69" parent="6">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="70" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="71" parent="7" name="start_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="72" parent="7" name="end_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="73" parent="7" name="destination">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="74" parent="7" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="75" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="76" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="77" parent="7" name="index_leaves_on_resident_id">
+        <columns>resident_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="78" parent="7">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="79" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="80" parent="8" name="daily_diet">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="81" parent="8" name="establishment_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="82" parent="8" name="maintenance_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="83" parent="8" name="staff_welfare_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="84" parent="8" name="extra_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="85" parent="8" name="hostel_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="86" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="87" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="88" parent="8" name="index_rate_cards_on_hostel_id">
+        <columns>hostel_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="89" parent="8">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="90" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="91" parent="9" name="room_number">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="92" parent="9" name="roll_number">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="93" parent="9" name="name">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="94" parent="9" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="95" parent="9" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="96" parent="9" name="hostel_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <key id="97" parent="9">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="98" parent="10" name="version">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <index id="99" parent="10" name="unique_schema_migrations">
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <column id="100" parent="11" name="name">
+        <data-type>(0,-1)|12</data-type>
+      </column>
+      <column id="101" parent="11" name="seq">
+        <data-type>(0,-1)|12</data-type>
+      </column>
+      <column id="102" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="103" parent="12" name="roll_number">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="104" parent="12" name="email">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="105" parent="12" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="106" parent="12" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="107" parent="12" name="password_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="108" parent="12" name="remember_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="109" parent="12" name="activation_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="110" parent="12" name="activated">
+        <data-type>BOOLEAN(0,-1)|4</data-type>
+        <default-expression>&apos;f&apos;</default-expression>
+      </column>
+      <column id="111" parent="12" name="activated_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="112" parent="12" name="reset_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="113" parent="12" name="reset_sent_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="114" parent="12" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <index id="115" parent="12" name="index_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="116" parent="12">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
   </data-source>
   <data-source name="Rails hostel_mess_pay: test" uuid="7a5c066e-241d-4d06-96c3-a7803fcd7755">
     <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
-    <schema name="" catalog=""/>
-    <table name="accounts" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="fine" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="leaves" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="last_month_adjustment" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_accounts_on_resident_id" unique="true" columns="resident_id"/>
-    </table>
-    <table name="active_admin_comments" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="namespace" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="body" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="resource_id" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="resource_type" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="author_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="author_type" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_active_admin_comments_on_resource_type_and_resource_id" unique="true" columns="resource_type,resource_id"/>
-      <index name="index_active_admin_comments_on_namespace" unique="true" columns="namespace"/>
-      <index name="index_active_admin_comments_on_author_type_and_author_id" unique="true" columns="author_type,author_id"/>
-    </table>
-    <table name="admin_users" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="encrypted_password" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="reset_password_token" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reset_password_sent_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="remember_created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="sign_in_count" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="current_sign_in_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="last_sign_in_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="current_sign_in_ip" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="last_sign_in_ip" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="hostel" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_admin_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
-      <index name="index_admin_users_on_email" unique="true" columns="email"/>
-    </table>
-    <table name="bills" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="from_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="to_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="expiry_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="amount" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="payment_mode" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="is_paid" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="paid_amount" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <index name="index_bills_on_resident_id" unique="true" columns="resident_id"/>
-    </table>
-    <table name="hostels" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="hostel" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="leaves" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="start_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="end_date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="destination" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_leaves_on_resident_id" unique="true" columns="resident_id"/>
-    </table>
-    <table name="rate_cards" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="daily_diet" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="establishment_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="maintenance_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="staff_welfare_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="extra_charge" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="hostel_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-      <index name="index_rate_cards_on_hostel_id" unique="true" columns="hostel_id"/>
-    </table>
-    <table name="residents" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="room_number" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="roll_number" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="hostel_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="schema_migrations" schema="" catalog="" type="TABLE">
-      <column name="version" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <index name="unique_schema_migrations" unique="true" columns="version"/>
-    </table>
-    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
-      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="users" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="roll_number" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="password_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="remember_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="activation_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="activated" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4" def="J2Yn"/>
-      <column name="activated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reset_digest" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reset_sent_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="resident_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <index name="index_users_on_email" unique="true" columns="email"/>
-    </table>
+    <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+      <schema id="1">
+        <visible>1</visible>
+      </schema>
+      <table id="2" parent="1" name="accounts"/>
+      <table id="3" parent="1" name="active_admin_comments"/>
+      <table id="4" parent="1" name="admin_users"/>
+      <table id="5" parent="1" name="bills"/>
+      <table id="6" parent="1" name="hostels"/>
+      <table id="7" parent="1" name="leaves"/>
+      <table id="8" parent="1" name="rate_cards"/>
+      <table id="9" parent="1" name="residents"/>
+      <table id="10" parent="1" name="schema_migrations"/>
+      <table id="11" parent="1" name="sqlite_sequence"/>
+      <table id="12" parent="1" name="users"/>
+      <column id="13" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="14" parent="2" name="fine">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="15" parent="2" name="leaves">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="16" parent="2" name="last_month_adjustment">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="17" parent="2" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="18" parent="2" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="19" parent="2" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="20" parent="2" name="index_accounts_on_resident_id">
+        <columns>resident_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="21" parent="2">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="22" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="23" parent="3" name="namespace">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="24" parent="3" name="body">
+        <data-type>TEXT(0,-1)|12</data-type>
+      </column>
+      <column id="25" parent="3" name="resource_id">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="26" parent="3" name="resource_type">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="27" parent="3" name="author_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="28" parent="3" name="author_type">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="29" parent="3" name="created_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="30" parent="3" name="updated_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="31" parent="3" name="index_active_admin_comments_on_namespace">
+        <columns>namespace</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="32" parent="3" name="index_active_admin_comments_on_resource_type_and_resource_id">
+        <columns>resource_type
+resource_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="33" parent="3" name="index_active_admin_comments_on_author_type_and_author_id">
+        <columns>author_type
+author_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="34" parent="3">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="35" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="36" parent="4" name="email">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="37" parent="4" name="encrypted_password">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="38" parent="4" name="reset_password_token">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="39" parent="4" name="reset_password_sent_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="40" parent="4" name="remember_created_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="41" parent="4" name="sign_in_count">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="42" parent="4" name="current_sign_in_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="43" parent="4" name="last_sign_in_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="44" parent="4" name="current_sign_in_ip">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="45" parent="4" name="last_sign_in_ip">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="46" parent="4" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="47" parent="4" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="48" parent="4" name="hostel">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <index id="49" parent="4" name="index_admin_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="50" parent="4" name="index_admin_users_on_reset_password_token">
+        <columns>reset_password_token</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="51" parent="4">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="52" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="53" parent="5" name="from_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="54" parent="5" name="to_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="55" parent="5" name="expiry_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="56" parent="5" name="amount">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="57" parent="5" name="payment_mode">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="58" parent="5" name="is_paid">
+        <data-type>BOOLEAN(0,-1)|4</data-type>
+      </column>
+      <column id="59" parent="5" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="60" parent="5" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="61" parent="5" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="62" parent="5" name="paid_amount">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <index id="63" parent="5" name="index_bills_on_resident_id">
+        <columns>resident_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="64" parent="5">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="65" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="66" parent="6" name="hostel">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="67" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="68" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <key id="69" parent="6">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="70" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="71" parent="7" name="start_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="72" parent="7" name="end_date">
+        <data-type>DATE(0,-1)|12</data-type>
+      </column>
+      <column id="73" parent="7" name="destination">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="74" parent="7" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="75" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="76" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="77" parent="7" name="index_leaves_on_resident_id">
+        <columns>resident_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="78" parent="7">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="79" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="80" parent="8" name="daily_diet">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="81" parent="8" name="establishment_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="82" parent="8" name="maintenance_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="83" parent="8" name="staff_welfare_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="84" parent="8" name="extra_charge">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="85" parent="8" name="hostel_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="86" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="87" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <index id="88" parent="8" name="index_rate_cards_on_hostel_id">
+        <columns>hostel_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="89" parent="8">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="90" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="91" parent="9" name="room_number">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="92" parent="9" name="roll_number">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="93" parent="9" name="name">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="94" parent="9" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="95" parent="9" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="96" parent="9" name="hostel_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <key id="97" parent="9">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="98" parent="10" name="version">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <index id="99" parent="10" name="unique_schema_migrations">
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <column id="100" parent="11" name="name">
+        <data-type>(0,-1)|12</data-type>
+      </column>
+      <column id="101" parent="11" name="seq">
+        <data-type>(0,-1)|12</data-type>
+      </column>
+      <column id="102" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <column id="103" parent="12" name="roll_number">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="104" parent="12" name="email">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="105" parent="12" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="106" parent="12" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="107" parent="12" name="password_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="108" parent="12" name="remember_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="109" parent="12" name="activation_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="110" parent="12" name="activated">
+        <data-type>BOOLEAN(0,-1)|4</data-type>
+        <default-expression>&apos;f&apos;</default-expression>
+      </column>
+      <column id="111" parent="12" name="activated_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="112" parent="12" name="reset_digest">
+        <data-type>VARCHAR(0,-1)|12</data-type>
+      </column>
+      <column id="113" parent="12" name="reset_sent_at">
+        <data-type>DATETIME(0,-1)|12</data-type>
+      </column>
+      <column id="114" parent="12" name="resident_id">
+        <data-type>INTEGER(0,-1)|4</data-type>
+      </column>
+      <index id="115" parent="12" name="index_users_on_email">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="116" parent="12">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
   </data-source>
 </component>

@@ -6,14 +6,14 @@
 <% if current_user.resident.hostel.hostel=='J'%>
         <p style="color:#989898;font-weight: 200;background: bisque;border-radius: 10px;text-align: center"> You are resident of Hostel J  and you can mark only 4 or 5 Leaves once a month</p>
         <%else%>
-    go back
+    Hostels
         <%end%>
     <%= form_for(@leave) do |f| %>
         <p class="Leave_lable">Start date</p>
-        <%= f.date_select :start_date,selected:Date.today+1,class: 'form-control' %><br><br>
+        <%= f.text_field :start_date,class: 'form-control',placeholder:"Start Date"  %>
         <p class="Leave_lable">End date</p>
-        <%= f.date_select :end_date,selected:Date.today+4,class: 'form-control' %><br><br>
-
+        <%= f.text_field :end_date,class: 'form-control',placeholder:"End Date" %>
+        <p class="Leave_lable">Destination</p>
         <%= f.text_field :destination,placeholder:"Destination" ,class: 'form-control' %>
 
         <%= f.submit "Mark Leave", class: "btn btn-primary" %>

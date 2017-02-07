@@ -21,6 +21,20 @@ body{
 .col-xs-8{
   margin-top:15%;
 }
+/////////footer/////////////
+
+#footer{
+  background:  #F8F8F8  ;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 30px;
+  bottom: 0;
+  font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color:#ff4d88;
+}
 
 /*///////////////////Side menu/////////////////*/
 
@@ -107,6 +121,7 @@ body{
   font-size: 1.5em;
   color:grey;
   background: transparent none repeat scroll 0% 0%;
+  position: fixed;
 }
 .menu_icon:hover{
   background: #a6a6a6;
@@ -198,7 +213,9 @@ body{
 .checkbox{
   margin-left: 30px;
 }
-/* forms */
+
+
+/* \\\\\\\\\\\\\\\\forms/////////// */
 
 .form-control {
   border-radius: 0px;
@@ -263,15 +280,7 @@ input {
 #user_menu li{
   list-style: none;
 }
-#bottom_quate {
-  position: fixed;
-  bottom:0px;
-  font-family: "Open Sans","lucida grande","Segoe UI",arial,verdana,"lucida sans unicode",tahoma,sans-serif;
-  font-size: 13px;
-  font-weight: normal;
-  color:#ff4d88 ;
 
-}
 .hostel_image{
   position: fixed;
   bottom:30%;
@@ -317,16 +326,70 @@ input {
     padding-top: 5px;
     font-weight: 200;
     font-size: 20px;
-    color:blueviolet;
+    color:red;
     display: block;
 
   }
 #leaves_button a{
- outline:none;
-  margin-bottom: 90%;
+  outline:none;
   font-size: 15px;
   text-decoration: none;
   color:white;
 }
 
+.ui-datepicker {
+  background: deepskyblue;
+  border: 1px solid dodgerblue;
+  color: white;
+}
+#bubu{
+  color:white;
+  text-decoration: none;
+}
 
+/* microposts */
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}

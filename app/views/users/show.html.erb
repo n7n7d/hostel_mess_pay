@@ -1,1 +1,13 @@
-<% provide(:title) %>
+<% provide(:title,'Pay bills online') %>
+<div class="row">
+  <div class="col-sm-7 col-sm-offset-3">
+<div class="panel panel-info">
+  <div class="panel-heading">Pending Bill</div>
+  <div class="panel-body">
+    <%if current_user.resident.bills.any?%>
+
+      <% end%>
+  </div>
+</div>
+    </div>
+  </div>

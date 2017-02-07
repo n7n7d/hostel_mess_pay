@@ -1,2 +1,6 @@
-
-<%= resident.room_number%>
+<%if current_admin_user.hostel == resident.hostel.hostel %>
+<%= resident.name%>
+<%= resident.hostel%>
+<%= link_to "Bills of resident", bill_path(resident.id) %><br>
+<% else %>
+<%end%>

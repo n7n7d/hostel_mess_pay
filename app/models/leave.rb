@@ -1,6 +1,8 @@
-
 class Leave < ActiveRecord::Base
   belongs_to :resident
+
+  default_scope -> { order(created_at: :desc) }
+
   validates :destination,presence:true
   validates :end_date,presence: true
   validates :start_date,presence: true
@@ -18,5 +20,10 @@ class Leave < ActiveRecord::Base
     if self.resident.leaves.where('start_date > ?', self.start_date.beginning_of_month).any?
       errors.add(:base,"You can't mark leave cause you have already marked leave for this month")
     end
+  end
+
+  def update_account
+    @account=Account.find_by(resident_id:self.resident_id)
+    @account.update_attribute(leaves: (self.end_date - self.start_date).to_i)
   end
 end

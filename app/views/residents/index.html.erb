@@ -1,13 +1,17 @@
-<div class="col-xs-4 col-xs-offset-3" style="background: greenyellow;position: fixed;left:10%;">
 
+<div class="col-xs-4 col-xs-offset-3" style="background: greenyellow;position: fixed;left:10%;margin-top:10%;">
+<%if admin_user_signed_in?%>
 <%= form_tag(residents_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
     <%= submit_tag "Search" %>
 <% end %>
-  </div>
 
 <% if @residents.present? %>
-    <%= render @residents %>
+    <%= render  @residents %>
 <% else %>
     <p>There are no residents containing the term(s) <%= params[:search] %>.</p>
 <% end %>
+      <%else%>
+  <p>Not authorisation!!!</p>
+      <%end%>
+</div>
